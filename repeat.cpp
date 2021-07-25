@@ -1,20 +1,48 @@
 #include<iostream>
 #include<time.h>
+#include <limits.h>
+void Out_Array(int a[], int n)
+{
+    for (int i = 0; i <= n; i++)
+    {
+        std::cout<<a[i]<<" ";
+    }
+}
+int Min(int a[], int n)
+{
+    int Min1;
+    Min1 = INT_MAX;
+    for(int i = 0; i<= n; i++)
+    {
+        Min1 = std::min(Min1, a[i]);
+    }
+    return Min1;
+}
 void repeat(int a[], int n)
 {
+    int b[20];
+    for (int i = 0 ; i <= n; i++)
+    {
+        b[i] = INT_MAX;
+    }
     for(int i = 0; i <= n-1; i++)
     {
-        int check = 0;
         for(int j = i + 1; j <= n-1 ; j++)
         {
             if(a[i] == a[j])
             {
-                std::cout<<a[i]<<" ";
-                check = 1;
+                b[i] = j - i;
             }
         }
-        if(check == 1)
+    }
+    int check = Min(b, n);
+    for(int i = 0; i<= n; i++)
+    {
+        if (b[i] == check)
+        {
+            std::cout<<a[i];
             break;
+        }
     }
 }
 
@@ -22,7 +50,7 @@ void repeat(int a[], int n)
 int main(){
     clock_t start, end;
     start = clock();
-    int a[] = {3, 1, 5, 1,5 , 7, 9, 7, 9};
+    int a[] = {1,2,3,4,2,1,3,4,5};
     int n(9);
     repeat(a, n);
     end = clock();
