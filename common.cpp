@@ -15,10 +15,12 @@ int main()
     start = clock();
     int common[20];
     int a[] = {1,2,3,54,4,5,6};
-    int size_a = sizeof(a) / sizeof(a[0]);   // - > 4 5 6
+    int size_a = sizeof(a) / sizeof(a[0]);   
     int b[] = {4,5,6,7,54,8,9,10};
     int size_b = sizeof(b) / sizeof(b[0]);
     int count1 = 0;
+
+    // Find common elements of Array a and Array b. Save in common Array.
     for (int i = 0; i <= size_a - 1; i++)
     {
         for(int j = 0; j <= size_b - 1; j++)
@@ -35,6 +37,8 @@ int main()
     int c[] = {1,4,7,23,54};    
     int size_c = sizeof(c) / sizeof(c[0]);
     int count2 = 0;
+
+    // Find common element of common Array and c Array. Save in common1 Array.
     for(int i = 0; i <= count1 - 1; i++)
     {
         for(int j = 0; j <= size_c; j++)
