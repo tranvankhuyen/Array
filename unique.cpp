@@ -10,28 +10,17 @@ void Print_Array(int a[], int n)
 // Function find and delete repeat element -----------
 void Find_delete_and_print_repeat_element(int a[], int n)
 {
-    // Initialize Array b with counter count = 0.
-    int b[100];
-    int count = 0;
-    for(int i = 0; i <= n - 1; i++)
+    for(int i = 0; i <= n-1; i++)
     {
-        int check = 0;
-        for(int j = i + 1; j <= n - 1; j++)
+        int j;
+        for(j = 0; j < i; j++)
         {
             if(a[i] == a[j])
-            {
-                check = 1;
                 break;
-            }
         }
-        if(check == 0)
-        {
-            b[count] = a[i];
-            count++;
-        }
+        if(i == j)
+            std::cout<<a[i]<<" ";
     }
-    Print_Array(b, count- 1);
-    std::cout<<count;
 }
 
 //-------- main function ---------
